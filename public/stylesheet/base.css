@@ -21,6 +21,9 @@ html {
   color: var(--color-surf-tx);
 
   font-size: var(--size-tx-mod);
+
+  /* Based on Header.vue */
+  margin-bottom: 3em;
 }
 
 span,
