@@ -1,0 +1,42 @@
+/* #####################
+* Start: By tag Bases *
+* *********************/
+
+* {
+  text-align: center;
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+*::after {
+  pointer-events: none;
+}
+
+html {
+  background-color: var(--color-surf);
+  color: var(--color-surf-tx);
+
+  font-size: var(--size-tx-mod);
+}
+
+span,
+text {
+  cursor: text;
+
+  font-family: var(--font_family-generic);
+}
+
+button {
+  cursor: pointer;
+
+  font-size: var(--size-tx-mod);
+  font-family: var(--font_family-generic);;
+}
+
+/* ********************
+* Close: By tag Bases *
+########################*/
