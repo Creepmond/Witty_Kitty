@@ -1,0 +1,161 @@
+/* Following [ https://m3.material.io/styles/color/roles ] color standards */
+
+/*
+ ? Common Abbreviations
+ * { mod } Moderate
+
+ * { tx } Text
+ * { surf } Surface
+
+ * { prim } Primary
+ * { sec } Secondary
+ * { ter } Tertiary
+
+ * { anim } Animation
+ * { expo } Exponential
+ * { influ } Influence
+ * { mono } Monochrome
+
+ * { cntr } Container
+ * { fix } Fixed
+ */
+
+
+
+
+
+
+
+/* *******************************************************************************************************
+* ***************************************     Global Variables     ***************************************
+* *******************************************************************************************************/
+
+/* ##########################
+* Start: Simple Constants *
+* *************************/
+
+:root {
+  --font_family-generic: Bitter, Times, Serif, Sans;
+
+  /* In font-sizes, only use 1.2x, 1.3x its multiples */
+  --size-tx-mod: 16px;
+
+  /* This combination allows for: */
+  /* 10 15 30 40 60 70 85 90 */
+  --alpha-vivid:  90%;
+  --alpha-opaque: 60%;
+  --alpha-hinted: 30%;
+  --alpha-subtle: 15%;
+
+  --ratio-block: 0.90;
+  --ratio-chunk: 0.60;
+  --ratio-fair:  0.30;
+  --ratio-bit:   0.15;
+}
+
+/* ************************
+* Close: Simple Constants *
+############################*/
+
+
+
+
+
+/* ####################
+* Start: Animations *
+* *******************/
+
+:root {
+  --duration-speed-fast: 0.2s;
+  --duration-speed-mod: 0.4s; 
+  --duration-speed-slow: 1s;
+
+  --anim-exaggerate: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  --anim-expo-in: cubic-bezier(1, 0, 1, 1);
+  --anim-expo-out: cubic-bezier(0, 1, 1, 1);
+}
+
+/* ******************
+* Close: Animations *
+######################*/
+
+
+
+
+
+/* #######################
+* Start: Basic Theming *
+* **********************/
+
+:root {
+  /** Interface */
+  --color-surf:    #021526;
+  --color-surf-tx: #ffffff;
+  --color-shadow:  #ffffff;
+
+  /** Accents */
+  --color-prim: #f2550d;
+  --color-sec:  #00cfc1;
+  --color-ter:  #f57a3d;
+
+  /** Influence */
+  --color-influ-success:  #5ac466;
+  --color-influ-warning:  #efbf8f;
+  --color-influ-distress: #d75b5b;
+
+  /* Influence colors that lean on the colors of Interface, this is to make other accent colors */
+  --color-influ-mono-surf: #2c2d27;
+  --color-influ-mono-tx:   #d3dae7;
+}
+
+/* *********************
+* Close: Basic Theming *
+#########################*/
+
+
+
+
+
+
+
+/* *******************************************************************************************************
+* *********************************     Variable Dependencies     ****************************************
+* *******************************************************************************************************/
+
+/* ###################
+* Start: Interface *
+* *******************/
+
+:root {
+  /** Bare */
+  --color-prim_bg: var(--color-prim);
+  --color-sec_bg:  var(--color-sec);
+  --color-ter_bg:  var(--color-ter);
+
+  --color-prim_bg-tx: var(--color-surface-text);
+  --color-sec_bg-tx:  var(--color-surface-text);
+  --color-ter_bg-tx:  var(--color-surface-text);
+
+  /** Container */
+  --color-prim_cntr: color-mix(in oklab, var(--color-prim), var(--color-influ-mono-surf) var(--alpha-hinted));
+  --color-sec_cntr:  color-mix(in oklab, var(--color-sec),  var(--color-influ-mono-surf) var(--alpha-hinted));
+  --color-ter_cntr:  color-mix(in oklab, var(--color-ter),  var(--color-influ-mono-surf) var(--alpha-hinted));
+  
+  --color-prim_cntr-tx: color-mix(in oklab, var(--color-prim), var(--color-influ-mono-tx) var(--alpha-hinted));
+  --color-sec_cntr-tx:  color-mix(in oklab, var(--color-sec),  var(--color-influ-mono-tx) var(--alpha-hinted));
+  --color-ter_cntr-tx:  color-mix(in oklab, var(--color-ter),  var(--color-influ-mono-tx) var(--alpha-hinted));
+
+  /** Fixed */
+  /* Just so happens to be that these two, share the same background */
+  --color-prim_fix: var(--color-prim_cntr);
+  --color-sec_fix:  var(--color-sec_cntr);
+  --color-ter_fix:  var(--color-ter_cntr);
+  
+  --color-prim_fix-tx: color-mix(in oklab, var(--color-prim), var(--color-influ-mono-tx) var(--alpha-opaque));
+  --color-sec_fix-tx:  color-mix(in oklab, var(--color-sec),  var(--color-influ-mono-tx) var(--alpha-opaque));
+  --color-ter_fix-tx:  color-mix(in oklab, var(--color-ter),  var(--color-influ-mono-tx) var(--alpha-opaque));
+}
+
+/* *****************
+* Close: Interface *
+#####################*/
