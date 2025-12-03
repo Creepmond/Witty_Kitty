@@ -18,6 +18,7 @@
 
  * { cntr } Container
  * { fix } Fixed
+ * { pos } Position
  */
 
 
@@ -90,8 +91,8 @@
 :root {
   /** Interface */
   --color-surf:    #021526;
-  --color-surf-tx: #ffffff;
-  --color-shadow:  #ffffff;
+  --color-surf-tx: #fff;
+  --color-shadow:  #0008;
 
   /** Accents */
   --color-prim: #f2550d;
@@ -122,9 +123,38 @@
 * *********************************     Variable Dependencies     ****************************************
 * *******************************************************************************************************/
 
-/* ###################
-* Start: Interface *
-* *******************/
+/* #################
+* Start: Surface *
+* ****************/
+
+:root {
+  /* This trick yields the lower emphasis on both dark and light colors */
+  --color-surf_cntr-lowest:  hsl(from var(--color-surf) h s calc(0.88 * l + 6));
+  --color-surf_cntr-low:     hsl(from var(--color-surf) h s calc(0.94 * l + 3));
+  --color-surf_cntr-high:    hsl(from var(--color-surf) h s calc(1.06 * l - 3));
+  --color-surf_cntr-highest: hsl(from var(--color-surf) h s calc(1.12 * l + 6));
+
+  /* Same as before */
+  --color-surf_tx: var(--color-surf_tx); 
+
+  /* Anything that uses <position>, like <box-shadow-color> */
+  --pos-lean-none:    0 0;
+  --pos-lean-high:    0.25em 0.25em;
+  --pos-lean-higher:  0.5em 0.5em;
+  --pos-lean-highest: 1em 1em;
+}
+
+/* ***************
+* Close: Surface *
+###################*/
+
+
+
+
+
+/* ###########################
+* Start: Interface Accents *
+* **************************/
 
 :root {
   /** Bare */
@@ -156,6 +186,6 @@
   --color-ter_fix-tx:  color-mix(in oklab, var(--color-ter),  var(--color-influ-mono-tx) var(--alpha-opaque));
 }
 
-/* *****************
-* Close: Interface *
-#####################*/
+/* *************************
+* Close: Interface Accents *
+#############################*/
